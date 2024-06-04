@@ -1,5 +1,5 @@
 const addBookButton = document.querySelector("#add-button");
-addBookButton.addEventListener("click", addBookToLibrary);
+// addBookButton.addEventListener("click", addBookToLibrary);
 
 const myLibrary = [];
 
@@ -14,16 +14,11 @@ function Book(title, author, pages, read) {
   };
 }
 
-function addBookToLibrary() {
-  const title = prompt("Title:");
-  const author = prompt("Author:");
-  const pages = prompt("Number of pages:");
-  const read = prompt("Read?:");
-
+function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(new Book(title, author, pages, read));
 }
 
-myLibrary.push(new Book("1984", "George Orwell", 350, "yes"));
-myLibrary.push(new Book("Norwegian Wood", "Haruki Murakami", 389, "yes"));
-myLibrary.push(new Book("Frankenstein", "Mary Shelley", 352, "yes"));
-myLibrary.push(new Book("Harry Potter and the Deathly Hallows", "J. K. Rowling", 784, "no"));
+addBookToLibrary("1984", "George Orwell", 350, "yes");
+addBookToLibrary("Norwegian Wood", "Haruki Murakami", 389, "yes");
+addBookToLibrary("Frankenstein", "Mary Shelley", 352, "yes");
+addBookToLibrary("Harry Potter and the Deathly Hallows", "J. K. Rowling", 784, "no");
