@@ -1,4 +1,5 @@
 const addBookButton = document.querySelector("#add-button");
+const booksContainer = document.querySelector("#books-container");
 // addBookButton.addEventListener("click", addBookToLibrary);
 
 const myLibrary = [];
@@ -22,3 +23,5 @@ addBookToLibrary("1984", "George Orwell", 350, "yes");
 addBookToLibrary("Norwegian Wood", "Haruki Murakami", 389, "yes");
 addBookToLibrary("Frankenstein", "Mary Shelley", 352, "yes");
 addBookToLibrary("Harry Potter and the Deathly Hallows", "J. K. Rowling", 784, "no");
+
+
