@@ -1,6 +1,4 @@
-const addBookButton = document.querySelector("#add-button");
-const booksContainer = document.querySelector("#books-container");
-// addBookButton.addEventListener("click", addBookToLibrary);
+const booksContainer = document.querySelector(".books-container");
 
 const myLibrary = [];
 
@@ -69,3 +67,4 @@ function updateBooks() {
   });
 }
 
+updateBooks();

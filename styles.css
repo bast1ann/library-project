@@ -16,7 +16,7 @@ input, button, textarea, select {
   font: inherit;
 }
 
-/*  */
+/* fonts */
 @font-face {
     font-family: 'biorhymeregular';
     src: url('./fonts/biorhyme-regular-webfont.woff2') format('woff2'),
@@ -27,36 +27,59 @@ input, button, textarea, select {
 }
 
 @font-face {
-    font-family: 'alegreya_scregular';
-    src: url('./fonts/alegreyasc-regular-webfont.woff2') format('woff2'),
-         url('./fonts/alegreyasc-regular-webfont.woff') format('woff');
+    font-family: 'playfair_displayregular';
+    src: url('./fonts/playfairdisplay-regular-webfont.woff2') format('woff2'),
+         url('./fonts/playfairdisplay-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
 }
 
-body {
-  border: 1px solid red;
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+/* things */
+
+html {
+  height: 100%;
 }
 
-#books-container {
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  color: white;
+  background: linear-gradient(0deg, rgb(70, 39, 0), rgb(70, 39, 0, 0.8));
+  letter-spacing: 2rem;
+  font-family: 'playfair_displayregular';
+  padding: 20px;
+}
+
+.books-container {
   display: grid;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   grid-auto-rows: minmax(320px, 1fr);
   gap: 20px;
+  flex: 1;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("./img/background.jpg");
+  background-size: cover;
 }
 
 .book {
-  border: 2px solid rgb(88, 43, 0);
+  border: 3px solid rgb(70, 39, 0);
   border-radius: 4px;
   background: linear-gradient(rgb(170, 82, 0), rgba(170, 82, 0, 0.85));
   color: rgba(255, 196, 0, 0.8);
   width: 280px;
   height: 360px;
   padding: 30px;
-  background: center / cover no-repeat url("./img/book-cover-2.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), center / cover no-repeat url("./img/book-cover.jpg");
 
   display: flex;
   flex-direction: column;
@@ -79,10 +102,12 @@ body {
   list-style: none;
   font-size: 1.05rem;
   line-height: 1.8;
-  font-family: 'alegreya_scregular';
+  font-family: 'playfair_displayregular';
 }
 
 .bold {
   font-weight: bold;
 }
+
 /* https://lostandtaken.com/downloads/black-bumpy-old-book-cover-texture/ */
+/* https://cl.pinterest.com/pin/19703317098657914/ */
