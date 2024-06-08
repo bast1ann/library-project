@@ -1,8 +1,11 @@
 const booksContainer = document.querySelector(".books-container");
+const openModal = document.getElementById("open-modal");
+const dialogBox = document.getElementById("dialog");
+const submitButton = document.getElementById("submit");
 
 const myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read) { /* book constructor */
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -66,5 +69,18 @@ function updateBooks() {
     createBook(book.title, book.author, book.pages, book.read);
   });
 }
+
+openModal.addEventListener("click", () => {
+  dialogBox.showModal();
+});
+
+submitButton.addEventListener("click", () => {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.getElementById("read").value;
+  addBookToLibrary(title, author, pages, read);
+  updateBooks();
+});
 
 updateBooks();

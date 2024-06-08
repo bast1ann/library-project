@@ -60,18 +60,19 @@ body {
   padding: 40px;
 }
 
-#add-button {
+#open-modal {
   height: 80px;
   width: 80px;
   border-radius: 50%;
   border: none;
+  outline: none;
   background: white;
   color: black;
   font-weight: bold;
-  transition: 1s;
+  transition: 0.5s;
 }
 
-#add-button:hover {
+#open-modal:hover {
   cursor: pointer;
   color: white;
   border: 1px solid white;
@@ -91,7 +92,7 @@ body {
 }
 
 .book {
-  border: 3px solid rgb(70, 39, 0);
+  border: 3px solid rgb(209, 154, 82);
   border-radius: 4px;
   color: #ffc400cc;
   width: 280px;
@@ -129,3 +130,35 @@ body {
 
 /* https://lostandtaken.com/downloads/black-bumpy-old-book-cover-texture/ */
 /* https://cl.pinterest.com/pin/19703317098657914/ */
+
+:modal {
+  background-color: beige;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  margin: auto;
+}
+
+:modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  min-width: 400px;
+}
+
+form label {
+  display: block;
+}
+
+form input {
+  width: 100%;
+}
+
+form button {
+  width: 40%;
+  align-self: center;
+}
