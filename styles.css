@@ -104,6 +104,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  transition: all 1s;
+  position: relative;
+}
+
+.book:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.delete-button {
+  display: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: red;
+  position: absolute;
+  left: 7px;
+  top: 5px;
+}
+
+.book:hover .delete-button {
+  display: block;
 }
 
 .book ul {

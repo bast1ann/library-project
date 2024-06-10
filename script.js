@@ -34,6 +34,7 @@ function createBook(title, author, pages, read) {
   const spanAuthor = document.createElement("span");
   const spanPages = document.createElement("span");
   const spanRead = document.createElement("span");
+  const deleteButton = document.createElement("div");
 
   divBook.className = "book";
   divTitle.className = "title";
@@ -41,10 +42,12 @@ function createBook(title, author, pages, read) {
   spanAuthor.className = "bold";
   spanPages.className = "bold";
   spanRead.className = "bold";
+  deleteButton.className = "delete-button";
 
   booksContainer.appendChild(divBook);
   divBook.appendChild(divTitle);
   divBook.appendChild(bookData);
+  divBook.appendChild(deleteButton);
   bookData.appendChild(authorLi);
   bookData.appendChild(pagesLi);
   bookData.appendChild(readLi);
@@ -53,6 +56,7 @@ function createBook(title, author, pages, read) {
   authorLi.innerHTML = "Author: ";
   pagesLi.textContent = "Pages: ";
   readLi.textContent = "Read: ";
+  deleteButton.textContent = "✖";
 
   authorLi.appendChild(spanAuthor);
   pagesLi.appendChild(spanPages);
