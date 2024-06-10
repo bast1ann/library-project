@@ -1,10 +1,12 @@
 const booksContainer = document.querySelector(".books-container");
 const openModalButton = document.getElementById("open-modal");
-const dialogBox = document.getElementById("dialog");
+const addDialogBox = document.getElementById("add-dialog");
 const submitButton = document.getElementById("submit");
 const editButton = document.getElementById("edit-button");
 
-// booksContainer.className = "books-container edit";
+const helpButton = document.getElementById("help-button");
+const helpDialogBox = document.getElementById("help-dialog");
+closeHelpDialogBox = document.querySelector("#help-dialog button");
 
 const myLibrary = [];
 
@@ -96,7 +98,7 @@ function updateBooks() {
 }
 
 openModalButton.addEventListener("click", () => {
-  dialogBox.showModal();
+  addDialogBox.showModal();
 });
 
 submitButton.addEventListener("click", () => {
@@ -112,5 +114,11 @@ editButton.addEventListener("click", () => {
   booksContainer.className =
   booksContainer.className == "books-container" ? "books-container edit" : "books-container";
 })
+
+helpButton.addEventListener("click", () => {
+  helpDialogBox.showModal();
+})
+
+closeHelpDialogBox.addEventListener("click", () => helpDialogBox.close());
 
 updateBooks();

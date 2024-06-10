@@ -60,6 +60,33 @@ body {
   padding: 40px;
 }
 
+.header div.buttons {
+  display: flex;
+  gap:35px;
+}
+
+#help-button {
+  font-size: 2rem;
+}
+
+.help-container {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-family: 'biorhymeregular';
+}
+
+.help-container li {
+  list-style: inside;
+  margin-top: 5px;
+}
+
+.help-container button {
+  align-self: center;
+  padding: 7px 8px;
+}
+
 .header-button {
   height: 80px;
   width: 80px;
@@ -95,6 +122,9 @@ body {
   background-size: cover;
 }
 
+.books-container.edit .book {
+  border: 3px solid red;
+}
 .books-container.edit .book:hover .delete-button{
   display: block;
 }

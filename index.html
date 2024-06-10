@@ -10,16 +10,17 @@
   <body>
     <div class="header">
       <h1>MY LIBRARY</h1>
-      <div>
+      <div class="buttons">
         <button id ="edit-button" class="header-button">EDIT <br>BOOKS</button>
         <button id="open-modal" class="header-button">ADD <br>BOOK</button>
+        <button id="help-button" class="header-button">?</button>
       </div>
     </div>
 
     <div class="books-container">
     </div>
 
-    <dialog id="dialog">
+    <dialog id="add-dialog">
       <form method="dialog">
         <div>
           <label for="title">Title</label>
@@ -40,6 +41,30 @@
         <button id="submit">Add</button>
         <button>Cancel</button>
       </form>
+    </dialog>
+
+    <dialog id="help-dialog">
+      <div class="help-container">
+        <div>
+          HOW TO ADD A BOOK
+          <ul>
+          <li>You have to click the "Add Book" button and a form will be displayed with the data you have to complete.</li>
+          </ul>
+        </div>
+
+        <div>
+          HOW TO EDIT A BOOK
+          <ul>
+            <li>When you click the "Edit Books" button, the edition mode will be activated and a red border will be displayed around books.</li>
+            <li>You can only edit the read status or delete a book.</li>
+            <li>To delete a book, click the "x" sign in the top-left corner on the book you want to delete.</li>
+            <li>To change the read status, click the read section on the book.</li>
+            <li>To escape edition mode, you have to click again the edit button.</li>
+          </ul>
+        </div>
+
+        <button>Close</button>
+      </div>
     </dialog>
   </body>
 </html>
