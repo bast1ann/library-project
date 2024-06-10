@@ -60,7 +60,7 @@ body {
   padding: 40px;
 }
 
-#open-modal {
+.header-button {
   height: 80px;
   width: 80px;
   border-radius: 50%;
@@ -72,11 +72,15 @@ body {
   transition: 0.5s;
 }
 
-#open-modal:hover {
+.header-button:hover {
   cursor: pointer;
   color: white;
   border: 1px solid white;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.header-button:active {
+  transform: scale(0.95, 0.95);
 }
 
 .books-container {
