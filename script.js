@@ -12,6 +12,11 @@ function Book(title, author, pages, read) { /* book constructor */
   this.read = read;
 }
 
+Book.prototype.toggleRead = function() {
+  this.read = this.read == "Yes" ? this.read = "No" : this.read = "Yes";
+  updateBooks();
+}
+
 function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(new Book(title, author, pages, read));
 }
@@ -71,6 +76,10 @@ function createBook(title, author, pages, read, bookId) {
   deleteButton.addEventListener("click", () => {
     myLibrary.splice(bookId, 1);
     updateBooks();
+  });
+
+  spanRead.addEventListener("click", () => {
+    myLibrary[bookId].toggleRead();
   });
 }
 
