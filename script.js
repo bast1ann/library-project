@@ -2,6 +2,9 @@ const booksContainer = document.querySelector(".books-container");
 const openModalButton = document.getElementById("open-modal");
 const dialogBox = document.getElementById("dialog");
 const submitButton = document.getElementById("submit");
+const editButton = document.getElementById("edit-button");
+
+// booksContainer.className = "books-container edit";
 
 const myLibrary = [];
 
@@ -13,7 +16,9 @@ function Book(title, author, pages, read) { /* book constructor */
 }
 
 Book.prototype.toggleRead = function() {
-  this.read = this.read == "Yes" ? this.read = "No" : this.read = "Yes";
+  if (booksContainer.className == "books-container edit") {
+    this.read = this.read == "Yes" ? this.read = "No" : this.read = "Yes";
+  }
 }
 
 function addBookToLibrary(title, author, pages, read) {
@@ -102,5 +107,10 @@ submitButton.addEventListener("click", () => {
   addBookToLibrary(title, author, pages, read);
   updateBooks();
 });
+
+editButton.addEventListener("click", () => {
+  booksContainer.className =
+  booksContainer.className == "books-container" ? "books-container edit" : "books-container";
+})
 
 updateBooks();

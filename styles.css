@@ -95,6 +95,15 @@ body {
   background-size: cover;
 }
 
+.books-container.edit .book:hover .delete-button{
+  display: block;
+}
+
+.books-container.edit .book ul.data li:nth-child(3):hover {
+  color: white;
+  cursor: pointer;
+}
+
 .book {
   border: 3px solid rgb(209, 154, 82);
   border-radius: 4px;
@@ -124,10 +133,6 @@ body {
   position: absolute;
   left: 7px;
   top: 5px;
-}
-
-.book:hover .delete-button {
-  display: block;
 }
 
 .book ul {
