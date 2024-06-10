@@ -24,7 +24,7 @@ addBookToLibrary("FAHRENHEIT 451", "Ray Bradbury", 256, "Yes");
 addBookToLibrary("THE OCTOBER COUNTRY", "Ray Bradbury", 320, "Yes");
 addBookToLibrary("ALICE'S ADVENTURE IN WONDERLAND", "Lewis Carroll", 352, "No");
 
-function createBook(title, author, pages, read) {
+function createBook(title, author, pages, read, bookId) {
   const divBook = document.createElement("div");
   const divTitle = document.createElement("div");
   const bookData = document.createElement("ul");
@@ -44,6 +44,8 @@ function createBook(title, author, pages, read) {
   spanRead.className = "bold";
   deleteButton.className = "delete-button";
 
+  divBook.setAttribute("data-book-id", bookId);
+
   booksContainer.appendChild(divBook);
   divBook.appendChild(divTitle);
   divBook.appendChild(bookData);
@@ -53,7 +55,7 @@ function createBook(title, author, pages, read) {
   bookData.appendChild(readLi);
 
   divTitle.textContent = title;
-  authorLi.innerHTML = "Author: ";
+  authorLi.textContent = "Author: ";
   pagesLi.textContent = "Pages: ";
   readLi.textContent = "Read: ";
   deleteButton.textContent = "✖";
@@ -65,12 +67,17 @@ function createBook(title, author, pages, read) {
   spanAuthor.textContent = author;
   spanPages.textContent = pages;
   spanRead.textContent = read;
+
+  deleteButton.addEventListener("click", () => {
+    myLibrary.splice(bookId, 1);
+    updateBooks();
+  });
 }
 
 function updateBooks() {
   booksContainer.innerHTML = "";
-  myLibrary.forEach( (book) => {
-    createBook(book.title, book.author, book.pages, book.read);
+  myLibrary.forEach( (book, index) => {
+    createBook(book.title, book.author, book.pages, book.read, index);
   });
 }
 
