@@ -33,7 +33,7 @@ input, button, textarea, select {
     font-style: normal;
 }
 
-/* things */
+/* general */
 html {
   height: 100%;
 }
@@ -45,6 +45,7 @@ body {
   flex-direction: column;
 }
 
+/* header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -89,6 +90,7 @@ body {
   font-size: 2rem;
 }
 
+/* books container */
 .books-container {
   display: grid;
   padding: 20px;
@@ -112,6 +114,7 @@ body {
   cursor: pointer;
 }
 
+/* individual book */
 .book {
   border: 3px solid #d19a52;
   border-radius: 4px;
@@ -176,6 +179,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* form */
 form {
   display: flex;
   flex-direction: column;
@@ -239,6 +243,7 @@ input#read + span::before {
   content: 'Only accepts "Yes" or "No"';
 }
 
+/* help info */
 .help-container {
   min-width: 400px;
   padding: 40px;
