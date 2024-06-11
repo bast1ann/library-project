@@ -196,6 +196,10 @@ form input {
   outline: none;
 }
 
+form input:invalid {
+  border: 1px solid red;
+}
+
 form input:focus {
   border: 1px solid rgb(209, 154, 82);
 }
