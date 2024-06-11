@@ -94,6 +94,9 @@ addButton.addEventListener("click", () => {
 editButton.addEventListener("click", () => {
   booksContainer.className =
   booksContainer.className == "books-container" ? "books-container edit" : "books-container";
+
+  editButton.innerHTML =
+  editButton.innerHTML == "EDIT <br>BOOKS" ? "DONE" : "EDIT <br>BOOKS";
 })
 
 helpButton.addEventListener("click", () => {
