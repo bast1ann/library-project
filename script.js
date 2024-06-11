@@ -102,13 +102,21 @@ helpButton.addEventListener("click", () => {
 
 closeHelpButton.addEventListener("click", () => helpDialogBox.close());
 
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const regexTitle = /(?:.{1,})$/;
+  const regexPages = /(?:\d)$/;
+  const regexRead = /^(?:Yes|No)$/;
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const read = document.getElementById("read").value;
-  addBookToLibrary(title, author, pages, read);
-  updateBooks();
+
+  if (regexTitle.test(title) && regexPages.test(pages) && regexRead.test(read)) {
+    addBookToLibrary(title, author, pages, read);
+    updateBooks();
+    addDialogBox.close();
+  }
 });
 
 addBookToLibrary("1984", "George Orwell", 350, "Yes");
