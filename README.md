@@ -1,4 +1,4 @@
-In this project I'm gonna apply what I've learned about objects, prototypes and prototypal inheritance. I'll do this building a Library.
+In this project I'm gonna apply what I've learned about objects, prototypes and prototypal inheritance. I'll do this by building a Library.
 
 The credits for the background image goes to this page:
 
