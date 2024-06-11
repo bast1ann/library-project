@@ -3,9 +3,9 @@ const addButton = document.getElementById("add-button");
 const editButton = document.getElementById("edit-button");
 const helpButton = document.getElementById("help-button");
 const submitButton = document.getElementById("submit");
-const closeHelpButton = document.querySelector("#help-dialog button");
 const addDialogBox = document.getElementById("add-dialog");
 const helpDialogBox = document.getElementById("help-dialog");
+const closeHelpDialogBox = document.querySelector("#help-dialog button");
 const myLibrary = [];
 
 function Book(title, author, pages, read) { /* book constructor */
@@ -100,7 +100,7 @@ helpButton.addEventListener("click", () => {
   helpDialogBox.showModal();
 })
 
-closeHelpButton.addEventListener("click", () => helpDialogBox.close());
+closeHelpDialogBox.addEventListener("click", () => helpDialogBox.close());
 
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
