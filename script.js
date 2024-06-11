@@ -1,17 +1,15 @@
 const booksContainer = document.querySelector(".books-container");
-const openModalButton = document.getElementById("open-modal");
-const addDialogBox = document.getElementById("add-dialog");
-const submitButton = document.getElementById("submit");
+const addButton = document.getElementById("add-button");
 const editButton = document.getElementById("edit-button");
-
 const helpButton = document.getElementById("help-button");
+const submitButton = document.getElementById("submit");
+const closeHelpButton = document.querySelector("#help-dialog button");
+const addDialogBox = document.getElementById("add-dialog");
 const helpDialogBox = document.getElementById("help-dialog");
-closeHelpDialogBox = document.querySelector("#help-dialog button");
-
 const myLibrary = [];
 
 function Book(title, author, pages, read) { /* book constructor */
-  this.title = title;
+  this.title = title.toUpperCase();
   this.author = author;
   this.pages = pages;
   this.read = read;
@@ -26,14 +24,6 @@ Book.prototype.toggleRead = function() {
 function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(new Book(title, author, pages, read));
 }
-
-addBookToLibrary("1984", "George Orwell", 350, "Yes");
-addBookToLibrary("NORWEGIAN WOOD", "Haruki Murakami", 389, "Yes");
-addBookToLibrary("FRANKENSTEIN", "Mary Shelley", 352, "Yes");
-addBookToLibrary("HARRY POTTER AND THE DEATHLY HALLOWS", "J. K. Rowling", 784, "No");
-addBookToLibrary("FAHRENHEIT 451", "Ray Bradbury", 256, "Yes");
-addBookToLibrary("THE OCTOBER COUNTRY", "Ray Bradbury", 320, "Yes");
-addBookToLibrary("ALICE'S ADVENTURE IN WONDERLAND", "Lewis Carroll", 352, "No");
 
 function createBook(title, author, pages, read, bookId) {
   const divBook = document.createElement("div");
@@ -97,17 +87,8 @@ function updateBooks() {
   });
 }
 
-openModalButton.addEventListener("click", () => {
+addButton.addEventListener("click", () => {
   addDialogBox.showModal();
-});
-
-submitButton.addEventListener("click", () => {
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById("pages").value;
-  const read = document.getElementById("read").value;
-  addBookToLibrary(title, author, pages, read);
-  updateBooks();
 });
 
 editButton.addEventListener("click", () => {
@@ -119,6 +100,22 @@ helpButton.addEventListener("click", () => {
   helpDialogBox.showModal();
 })
 
-closeHelpDialogBox.addEventListener("click", () => helpDialogBox.close());
+closeHelpButton.addEventListener("click", () => helpDialogBox.close());
 
+submitButton.addEventListener("click", () => {
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.getElementById("read").value;
+  addBookToLibrary(title, author, pages, read);
+  updateBooks();
+});
+
+addBookToLibrary("1984", "George Orwell", 350, "Yes");
+addBookToLibrary("NORWEGIAN WOOD", "Haruki Murakami", 389, "Yes");
+addBookToLibrary("FRANKENSTEIN", "Mary Shelley", 352, "Yes");
+addBookToLibrary("HARRY POTTER AND THE DEATHLY HALLOWS", "J. K. Rowling", 784, "No");
+addBookToLibrary("FAHRENHEIT 451", "Ray Bradbury", 256, "Yes");
+addBookToLibrary("THE OCTOBER COUNTRY", "Ray Bradbury", 320, "Yes");
+addBookToLibrary("ALICE'S ADVENTURE IN WONDERLAND", "Lewis Carroll", 352, "No");
 updateBooks();
