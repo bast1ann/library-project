@@ -104,16 +104,16 @@ closeHelpButton.addEventListener("click", () => helpDialogBox.close());
 
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
-  const regexTitle = /(?:.{1,})$/;
-  const regexPages = /(?:\d)$/;
+  const regexTitle = /^(?:.{1,})$/;
+  const regexPages = /^(?:\d{1,})$/;
   const regexRead = /^(?:Yes|No)$/;
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById("pages").value;
-  const read = document.getElementById("read").value;
+  const title = document.getElementById("title");
+  const author = document.getElementById("author");
+  const pages = document.getElementById("pages");
+  const read = document.getElementById("read");
 
-  if (regexTitle.test(title) && regexPages.test(pages) && regexRead.test(read)) {
-    addBookToLibrary(title, author, pages, read);
+  if (regexTitle.test(title.value) && regexPages.test(pages.value) && regexRead.test(read.value)) {
+    addBookToLibrary(title.value, author.value, pages.value, read.value);
     updateBooks();
     addDialogBox.close();
   }
