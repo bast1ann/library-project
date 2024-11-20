@@ -8,16 +8,18 @@ const helpDialogBox = document.getElementById("help-dialog");
 const closeHelpDialogBox = document.querySelector("#help-dialog button");
 const myLibrary = [];
 
-function Book(title, author, pages, read) { /* book constructor */
-  this.title = title.toUpperCase();
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 
-Book.prototype.toggleRead = function() {
-  if (booksContainer.className == "books-container edit") {
-    this.read = this.read == "Yes" ? this.read = "No" : this.read = "Yes";
+  toggleRead() {
+    if (booksContainer.className == "books-container edit") {
+      this.read = this.read == "Yes" ? this.read = "No" : this.read = "Yes";
+    }
   }
 }
 
